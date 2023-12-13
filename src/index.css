@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./assets/fonts/ApercuMonoProBold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./assets/fonts/ApercuMonoProLight.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./assets/fonts/ApercuMonoProMedium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./assets/fonts/ApercuMonoProRegular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Ogg";
+    src: url("./assets/fonts/Ogg-Italic.otf") format("opentype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Ogg";
+    src: url("./assets/fonts/Ogg-Roman.otf") format("opentype");
+    font-style: normal;
+}
+
+html,
+body,
+:root {
+    height: 100%;
+}
+
+body,
+#root {
+    min-height: 100vh;
+}
+
+*::selection {
+    background: none;
+}
+
+*::-moz-selection {
+    background: none;
+}
+
+h1::selection,
+p::selection,
+span::selection,
+h3::selection {
+    background-color: black;
+    color: white;
+}
+
+h1::-moz-selection,
+h3::-moz-selection,
+span::-moz-selection,
+p::-moz-selection {
+    background-color: black;
+    color: white;
+}
+
+#root {
+    position: relative;
+}
+
+#spiral:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background: black;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    scroll-behavior: smooth;
+}
+
+.event-row-wrp {
+    background-image: linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, left 14px, 0 calc(100% - 14px);
+    background-repeat: repeat-x, repeat-x, repeat-x, repeat-x;
+    background-size: 24px 1px, 24px 1px, 24px 1px, 24px 1px;
+    animation: flow 400ms linear infinite;
+}
+
+@keyframes flow {
+    0% {
+        background-position: 0 0, 0 100%, 0 14px, 0 calc(100% - 14px);
+    }
+    100% {
+        background-position: 24px 0, -24px 100%, 24px 14px, -24px calc(100% - 14px);
+    }
+}
+
+@media (max-width: 766px) {
+    .event-row-wrp {
+        background-image: none;
+        background-position: initial;
+        background-repeat: initial;
+        background-size: initial;
+    }
+
+    .event-row:first-child {
+        background-image: linear-gradient(90deg, #000 50%, transparent 0),
+            linear-gradient(90deg, #000 50%, transparent 0),
+            linear-gradient(90deg, #000 50%, transparent 0),
+            linear-gradient(90deg, #000 50%, transparent 0);
+        background-position: 0 0, 0 100%, left 14px, 0 calc(100% - 14px);
+        background-repeat: repeat-x, repeat-x, repeat-x, repeat-x;
+        background-size: 24px 1px, 24px 1px, 24px 1px, 24px 1px;
+    }
+
+    .event-row {
+        background-image: linear-gradient(90deg, #000 50%, transparent 0),
+            linear-gradient(90deg, #000 50%, transparent 0);
+        background-position: 0 100%, 0 calc(100% - 14px);
+        background-repeat: repeat-x, repeat-x;
+        background-size: 24px 1px, 24px 1px;
+    }
+}
+
+.event-hover {
+    background-image: linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(180deg, #000 50%, transparent 0),
+        linear-gradient(180deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+    /* animation: linear-flow 400ms linear infinite; */
+    animation: linear-flow 0.4s linear infinite;
+    animation-play-state: paused;
+}
+
+.event-hover:hover {
+    animation-play-state: running;
+}
+
+@keyframes linear-flow {
+    0% {
+        background-position: 0 0, 0 100%, 0 0, 100% 0;
+    }
+    100% {
+        background-position: 30px 0, -30px 100%, 0 -30px, 100% 30px;
+    }
+}
+
+.slash:first-child div {
+    background-image: repeating-linear-gradient(
+            -74deg,
+            rgba(31, 16, 16, 0.2),
+            rgba(0, 0, 0, 0.2) 1px,
+            transparent 0,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            -74deg,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 1px,
+            transparent 0,
+            transparent 4px
+        );
+    background-position: 100px 0, 0 100%;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10% 12px, 10% 12px;
+    background-color: white;
+    animation: none;
+}
