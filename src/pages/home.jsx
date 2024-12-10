@@ -10,13 +10,13 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, delay: 2.8 }}
-            className="relative  md:max-w-home"
+            transition={{ duration: 1, delay: 2 }}
+            className="relative  md:max-w-home overflow-x-hidden"
         >
             <div className="px-[30px] md:px-[60px] pt-[300px] md:pt-[250px] pb-[40px] md:pb-[120px] w-full h-full relative">
                 {/* Text content */}
                 <div className="relative">
-                    <h1 className="text-[35px] leading-[42px] md:text-[75px] md:leading-tight text-black font-ogg font-medium">
+                    <h1 className="text-[35px] leading-[42px] md:text-[75px] md:leading-[85px] text-black font-ogg font-medium">
                         Canal Street Market is a carefully curated retail market, food hall &
                         community space open year-round at 265 Canal Street. Support Small Business
                         this weekend!

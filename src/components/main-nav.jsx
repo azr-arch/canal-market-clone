@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-// const eased = easeIn(0.5);
 
-const variants = {
+const navVariants = {
+    hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-            staggerDirection: -1,
-            delay: 1,
-            when: "beforeChildren",
-        },
+        transition: { staggerChildren: 0.15, when: "beforeChildren" },
     },
-    hidden: { opacity: 0 },
 };
 
 const navItem = {
@@ -25,14 +18,11 @@ const navItem = {
 };
 
 const MainNav = () => {
-    const navigate = useNavigate();
-
     const routes = [
         {
             label: "Food",
             foreignLabel: "餐饮",
             bg: "bg-blue",
-            href: "/about",
         },
         {
             label: "Retail",
@@ -48,32 +38,26 @@ const MainNav = () => {
 
     return (
         <motion.nav
-            variants={variants}
+            variants={navVariants}
             initial="hidden"
             animate="visible"
-            // transition={{ease: "easeIn", type:"tween"}}
-            className="hidden md:flex fixed w-full h-full inset-0 justify-end font-apercu"
+            className="hidden overflow-hidden md:flex fixed w-full h-full inset-0 justify-end font-apercu"
         >
             {routes.map((route) => (
-                <motion.a
+                <motion.div
                     key={route}
-                    // href={route?.href}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        navigate("/about");
-                    }}
                     variants={navItem}
                     transition={{ ease: "easeOut", duration: 1 }}
                     className={`
-                    h-full px-[5px] py-[60px] 
-                    min-w-[60px] w-[60px] ${route.bg} relative 
-                    cursor-pointer  text-[20px]`}
+                        h-full px-[5px] py-[60px] 
+                        min-w-[60px] w-[60px] ${route.bg} relative 
+                        text-[20px]`}
                 >
                     <p className="pt-4 text-center">{route.foreignLabel}</p>
                     <span className="absolute top-1/2 -translate-y-1/2 left-1/2 rotate-90 -translate-x-1/2">
                         {route.label}
                     </span>
-                </motion.a>
+                </motion.div>
             ))}
         </motion.nav>
     );
