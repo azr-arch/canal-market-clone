@@ -1,8 +1,23 @@
-# React + Vite
+# Canal Street Market Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clone of the [Canal Street Market website](https://canalstreet.market/) built using **ReactJS**, **Framer Motion**, and **TailwindCSS**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern User Interface**: Designed with TailwindCSS for a sleek and responsive look.
+- **Animations**: Implemented smooth and engaging transitions using Framer Motion.
+- **ReactJS**: Powered by ReactJS for fast and dynamic web application performance.
+
+## Technologies Used
+
+- **ReactJS**: Frontend framework for building user interfaces.
+- **Framer Motion**: Library for creating animations and transitions.
+- **TailwindCSS**: Utility-first CSS framework for styling.
+
+## Live
+- [Live](https://canal-market-clone-azr-arch.vercel.app/)
+
+## Credits
+
+- Inspired by [Canal Street Market](https://canalstreet.market/).
+
